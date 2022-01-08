@@ -1,0 +1,23 @@
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-v3.yml up`
+# Add the `-d` flag at the end for detached execution
+# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-v3.yml down`
+version: "3"
+services:
+  firefox:
+    image: seleniarm/node-firefox:4.0.0-20211213
+    container_name: ddev-${DDEV_SITENAME}-firefox
+    shm_size: 2gb
+    depends_on:
+      - ddev-${DDEV_SITENAME}-seleniarm-hub
+    environment:
+      - SE_EVENT_BUS_HOST=seleniarm-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  seleniarm-hub:
+    image: seleniarm/hub:4.0.0-20211213
+    container_name: ddev-${DDEV_SITENAME}-seleniarm-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"

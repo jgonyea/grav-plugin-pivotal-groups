@@ -1,0 +1,43 @@
+{
+    "name": "jgonyea/pivotal-groups",
+    "type": "grav-plugin",
+    "description": "Allows content to be further divided into groups with inheritable access permissions.",
+    "keywords": [
+        "plugin"
+    ],
+    "homepage": "https://github.com/jgonyea/grav-plugin-pivotal-groups",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Gonyea",
+            "email": "jeremy.gonyea@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grav\\Plugin\\PivotalGroups\\": "classes/",
+            "Grav\\": "../../../system/src/Grav",
+            "Pimple\\": "../../../vendor/"
+        },
+        "classmap": [
+            "pivotal-groups.php"
+        ]
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.0"
+        }
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-webdriver": "^1.0.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/codecept run",
+        "test-windows": "vendor\\bin\\codecept run"
+    }
+}

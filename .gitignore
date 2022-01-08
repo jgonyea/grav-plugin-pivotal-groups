@@ -1,0 +1,21 @@
+# Composer
+.composer
+vendor/*
+!*/vendor/*
+cache/*
+
+# OS Generated
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+
+# IDE
+.vscode/*
+
+# Codeception testing
+tests/_output/*
+tests/_support/_generated/*
+tests/cache/*
+tests/error.log

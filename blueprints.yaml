@@ -1,0 +1,33 @@
+name: Pivotal Groups
+slug: pivotal-groups
+type: plugin
+version: 0.1.0
+description: Allows content to be further divided into groups with inheritable access permissions.
+icon: plug
+author:
+  name: Jeremy Gonyea
+  email: jeremy.gonyea@gmail.com
+homepage: https://github.com/jgonyea/grav-plugin-pivotal-groups
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/jgonyea/grav-plugin-pivotal-groups/issues
+docs: https://github.com/jgonyea/grav-plugin-pivotal-groups/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
