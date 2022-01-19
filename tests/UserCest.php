@@ -1,5 +1,8 @@
 <?php
 
+use Codeception\Util\Fixtures;
+use Grav\Common\Grav;
+
 class UserCest
 {
     /** @var Grav $grav */
@@ -12,9 +15,11 @@ class UserCest
         "user3" => ["group1", "group2"]
     ];
 
-    public function _before(AcceptanceTester $I)
+    public function _before(AcceptanceTester $I): void
     {
         //$I->setupGroups();
+        $grav = Fixtures::get('grav');
+        $this->grav = $grav();
         $I->setupAccounts();
     }
 

@@ -19,8 +19,8 @@ class Acceptance extends \Codeception\Module
     public function setupAccounts()
     {
         // Assign the instance
-        $this->grav = Grav::instance();
-        codecept_debug($this->grav);
+        $grav = Fixtures::get('grav');
+        $this->grav = $grav();
         // Bootstrap the stream-wrappers
         $this->grav['streams'];
         // Ensure current configuration is applied
