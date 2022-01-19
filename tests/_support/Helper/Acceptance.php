@@ -20,6 +20,7 @@ class Acceptance extends \Codeception\Module
     {
         // Assign the instance
         $this->grav = Grav::instance();
+        codecept_debug($this->grav);
         // Bootstrap the stream-wrappers
         $this->grav['streams'];
         // Ensure current configuration is applied

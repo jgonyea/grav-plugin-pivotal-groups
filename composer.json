@@ -19,9 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Grav\\Plugin\\PivotalGroups\\": "classes/",
-            "Grav\\": "../../../system/src/Grav",
-            "Pimple\\": "../../../vendor/"
+            "Grav\\Plugin\\PivotalGroups\\": "classes/"
         },
         "classmap": [
             "pivotal-groups.php"
@@ -33,7 +31,6 @@
         }
     },
     "require-dev": {
-        "codeception/codeception": "^4.1",
         "codeception/module-webdriver": "^1.0.0"
     },
     "scripts": {
